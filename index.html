@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" async></script>
+</head>
+<body>
+    <div class="to-do-container">
+        <span class="container flag">TO DO APP</span>
+        <span class="input-container container">
+            <input class="text-style" type="text" data-item>
+            <button class="add-button button" data-add-item>ADD</button>
+        </span>
+        <!--EXAMPLE HTML CODE FOR LAYOUT-->
+        <div class="main-list-container">
+            <!--Not Showing-->
+            <div class="list-container container">
+                <input type="checkbox" id="check-box" data-check>
+                <span class="list-text" data-item-transferred>rxusf</span>
+                <span class="edit-item">
+                    <button class="button update-button" data-update-row>UPDATE</button>
+                    <button class="button delete-button" data-delete-row>DELETE</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="absolute update-container container">
+        <input class="text-content text-style" type="text" data-item-received>
+        <div class="update-buttons">
+            <button class="another-update button" data-update-success>UPDATE</span>
+            <button class="cancel button" data-cancel-update>CANCEL</span>
+        </div>
+    </div>
+</body>
+</html>

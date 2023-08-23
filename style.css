@@ -1,0 +1,196 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    --clr-text: hsla(358, 30%, 8%, 1);
+}
+
+html {
+    --s: 100px;
+    --c1: #C3CCAF;
+    --c2: #67434F;
+    
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
+    --_p: var(--_s) conic-gradient(at 20% 20%,#0000 75%,var(--c2) 0);
+    background:
+      calc( .9*var(--s)) calc( .9*var(--s))/var(--_p),
+      calc(-.1*var(--s)) calc(-.1*var(--s))/var(--_p),
+      calc( .7*var(--s)) calc( .7*var(--s))/var(--_g),
+      calc(-.3*var(--s)) calc(-.3*var(--s))/var(--_g),
+      conic-gradient(from 90deg at 20% 20%,var(--c2) 25%,var(--c1) 0) 
+       0 0/var(--s) var(--s);
+    animation: m 3s infinite;
+  }
+  @keyframes m {
+    0% {
+     background-position: 
+      calc( .9*var(--s)) calc( .9*var(--s)),
+      calc(-.1*var(--s)) calc(-.1*var(--s)),
+      calc( .7*var(--s)) calc( .7*var(--s)),
+      calc(-.3*var(--s)) calc(-.3*var(--s)),0 0
+    }
+    25% {
+     background-position: 
+      calc(1.9*var(--s)) calc( .9*var(--s)),
+      calc(-1.1*var(--s)) calc(-.1*var(--s)),
+      calc(1.7*var(--s)) calc( .7*var(--s)),
+      calc(-1.3*var(--s)) calc(-.3*var(--s)),0 0
+    }
+    50% {
+     background-position: 
+      calc(1.9*var(--s)) calc(-.1*var(--s)),
+      calc(-1.1*var(--s)) calc( .9*var(--s)),
+      calc(1.7*var(--s)) calc(-.3*var(--s)),
+      calc(-1.3*var(--s)) calc( .7*var(--s)),0 0
+    }
+    75% {
+     background-position: 
+      calc(2.9*var(--s)) calc(-.1*var(--s)),
+      calc(-2.1*var(--s)) calc( .9*var(--s)),
+      calc(2.7*var(--s)) calc(-.3*var(--s)),
+      calc(-2.3*var(--s)) calc( .7*var(--s)),0 0
+    }
+    100% {
+     background-position: 
+      calc(2.9*var(--s)) calc(-1.1*var(--s)),
+      calc(-2.1*var(--s)) calc(1.9*var(--s)),
+      calc(2.7*var(--s)) calc(-1.3*var(--s)),
+      calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0
+    }
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.flag {
+    color: var(--clr-text);
+}
+
+.to-do-container {
+    width: min(30em, 90%);
+    height: 90%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .125rem;
+}
+
+.container {
+    width: 100%;
+    padding: .35rem .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    border: .2em solid var(--clr-text);
+    border-radius: .5em;
+	background: hsl(0 0 0/0);
+    background-color: white;
+}
+
+.text-style {
+    width: 70%;
+    appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid var(--clr-text);
+	background: rgba(#E91E63, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+    color: var(--clr-text);
+}
+
+.input-container > .add-button {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.main-list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .125em;
+}
+
+.list-container {
+    gap: 2em;
+}
+
+.list-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: .125rem;
+}
+
+/* .list-item::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 3px;
+    background-color: var(--clr-text);
+    margin: .25em;
+} */
+
+.list-text {
+    width: 70%;
+}
+
+.edit-item {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: .125rem;
+    gap: .1rem;
+}
+
+.button {
+    appearance: none;
+	border: .2em solid var(--clr-text);
+	background: hsl(0 0 0/0);
+	padding: .45em .5em;
+	color: var(--clr-text);
+	border-radius: 2em;
+	transition: 1s;
+	&:hover, &:focus, &:active {
+		background: #E91E63;
+		color: #fff;
+	}
+}
+
+.update-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: .1rem;
+    padding: .125rem;
+    display: none;
+    background-color: white;
+    color: var(--clr-text);
+}
+
+.update-buttons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-content {
+    width: 70%;
+}
+
